@@ -9,12 +9,16 @@ const validateForm = (event) => {
     const password = form.elements.password.value;
 
     if(login === "" || password === ""){
-        alert("All form fields must be filled in");
+        return alert("All form fields must be filled in");
+        
     }
-    const data = {}
-    data.email = login.trim();
-    data.password = password.trim();
-    console.log(data);
-    form.reset();
+    else{
+        const data = {}
+        data.email = login.trim();
+        data.password = password.trim();
+        console.log(data);
+        form.reset();
+    }
+   
 }
 loginForm.addEventListener("submit", validateForm);
